@@ -23,16 +23,16 @@ public class FilmGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
-        frame.getContentPane().setBackground(new Color(240, 240, 240)); // Arka plan rengini değiştir
+        frame.getContentPane().setBackground(new Color(240, 240, 240)); 
 
         panel = new JPanel();
-        panel.setLayout(new GridLayout(5, 2, 15, 15)); // Grid düzeni ile form elemanları
-        panel.setBackground(new Color(255, 255, 255)); // Panel arka planı
+        panel.setLayout(new GridLayout(5, 2, 15, 15)); 
+        panel.setBackground(new Color(255, 255, 255));
         frame.add(panel, BorderLayout.NORTH);
 
         JLabel titleLabel = new JLabel("Title:");
         titleLabel.setFont(new Font("Arial", Font.PLAIN, 14));
-        titleLabel.setForeground(new Color(0, 0, 0)); // Yazı rengini siyah yap
+        titleLabel.setForeground(new Color(0, 0, 0)); 
 
         titleField = new JTextField();
         titleField.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -45,7 +45,7 @@ public class FilmGUI {
         genreField = new JTextField();
         genreField.setFont(new Font("Arial", Font.PLAIN, 14));
         genreField.setBackground(new Color(255, 255, 255));
-        genreField.setEditable(false);  // Bu alan otomatik doldurulacak
+        genreField.setEditable(false);  
 
         JLabel yearLabel = new JLabel("Year:");
         yearLabel.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -54,7 +54,7 @@ public class FilmGUI {
         yearField = new JTextField();
         yearField.setFont(new Font("Arial", Font.PLAIN, 14));
         yearField.setBackground(new Color(255, 255, 255));
-        yearField.setEditable(false);  // Bu alan otomatik doldurulacak
+        yearField.setEditable(false); 
 
         JLabel ratingLabel = new JLabel("Rating:");
         ratingLabel.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -65,7 +65,6 @@ public class FilmGUI {
         ratingField.setBackground(new Color(255, 255, 255));
         ratingField.setEditable(false);
 
-        // Panel'e bileşenleri ekle
         panel.add(titleLabel);
         panel.add(titleField);
         panel.add(genreLabel);
@@ -147,7 +146,7 @@ public class FilmGUI {
         }
 
         try {
-            // OMDB API'den film bilgilerini al
+            
             String url = "http://www.omdbapi.com/?apikey=81ff43ac&t=" + title;
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
